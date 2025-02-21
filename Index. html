@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warranty sticker validation</title>
+    <style>
+        :root {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 95%;
+            margin: 30px auto;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: #777;
+            margin: 10px 0 15px 0;
+        }
+
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 20px 0;
+            letter-spacing: 1px;
+        }
+
+        .main-description {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+
+        .banner {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .input-instruction {
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 15px 0;
+        }
+
+        .input-container {
+            width: 70%;
+            max-width: 400px;
+            display: flex;
+            align-items: center;
+            border: 2px solid #3498db;
+            border-radius: 25px 0 0 25px;
+            overflow: hidden;
+            margin: 10px auto;
+            transform: scale(0.95);
+        }
+
+        .input-container input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 25px 0 0 25px;
+        }
+
+        .input-container button {
+            padding: 12px 20px;
+            background-color: #B8860B;
+            color: white;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border-radius: 0;
+        }
+
+        .input-container button:hover {
+            background-color: #996515;
+        }
+
+        .input-container button:active {
+            transform: scale(0.95);
+        }
+
+        #result {
+            margin-top: 15px;
+            margin-bottom: 40px; /* زيادة المسافة هنا */
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .logo-bottom-left {
+            width: 100px;
+            margin: 40px 0 0 20px; /* زيادة المسافة هنا */
+            float: left;
+        }
+
+        .links {
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .left-section {
+            display: flex;
+            gap: 25px;
+        }
+
+        .right-section {
+            border-left: 2px solid #eee;
+            padding-left: 25px;
+        }
+
+        .links h3 {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .links p {
+            margin: 4px 0;
+            line-height: 1.4;
+        }
+
+        .footer {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 1.6rem !important;
+                margin: 15px 0;
+            }
+
+            .main-description {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+            .logo {
+                width: 80px;
+            }
+
+            .breadcrumb {
+                font-size: 0.8rem;
+                margin-bottom: 15px;
+            }
+
+            .input-container {
+                width: 90%;
+                transform: none;
+            }
+
+            .logo-bottom-left {
+                width: 80px;
+                margin-left: 10px;
+                margin-top: 30px !important; /* تكييف للهواتف */
+            }
+
+            .links {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .left-section {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .right-section {
+                border-left: none;
+                padding-left: 0;
+                border-top: 2px solid #eee;
+                padding-top: 15px;
+            }
+
+            #result {
+                margin-bottom: 30px; /* تكييف للهواتف */
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                font-size: 13px;
+            }
+
+            .input-container button {
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-content">
+            <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="شعار الموقع" class="logo">
+            <div class="breadcrumb">
+                <a href="#">Home</a> / <a href="#">Check sticker</a>
+            </div>
+        </div>
+
+        <h2>Warranty sticker validation</h2>
+        
+        <p class="main-description">
+            Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.<br>
+            تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف
+        </p>
+
+        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
+
+        <p class="input-instruction">
+            <br>
+            Enter the number shown on the sticker in this box
+            
+            أدخل الرقم الظاهر على الملصق في هذا المربع   
+        </p>
+
+        <div class="input-container">
+            <input type="text" id="numberInput" placeholder="XXXXXX">
+            <button type="submit" onclick="validateForm(event)">Check</button>
+        </div>
+<div id="result"></div>
+         
+    </div>
+        <div id="result"></div>
+    
+    <div class="links">
+            <div class="left-section">
+                <div>
+            <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="بانر الموقع" class="banner">
+        <div class="links"> 
+
+            <div class="right-section">
+                    <h2>روابط مفيدة</h2>
+                    <p><a href="#">بيت</a></p>
+                    <p><a href="#">نقطة البيع</a></p>
+                    <p><a href="#">اتصل بنا</a></p>
+                    <p><a href="#">النيابة العامة</a></p>
+                </div>
+                
+                <div>
+                    <h2>منتجات</h2>
+                    <p><a href="#">آيفون</a></p>
+                    <p><a href="#">ماك</a></p>
+                    <p><a href="#">آيباد</a></p>
+                    <p><a href="#">آيبود</a></p>
+                    <p><a href="#">تلفزيون آبل</a></p>
+                    <p><a href="#">ساعة ابل</a></p>
+                </div>
+                
+                <div>
+                    <h2>معلومة</h2>
+                    <p><a href="##">تعلم كيف</a></p>
+                    <p><a href="##">مقدمي الخدمة</a></p>
+                    <p><a href="##">الشروط والأحكام</a></p>
+                    <p><a href="##">اتصل بنا</a></p>
+                </div>
+            </div>
+
+            <div class="right-section">
+                <h2>الدعم والمبيعات</h2>
+                <p><a href="#">للصيانة: زيارة AC-Care</a></p>
+                <p><a href="#">للمبيعات الفردية: نقطة البيع</a></p>
+                <p><a href="mailto:sales@arabcomputers.com.sa">للمبيعات المؤسسية: sales@arabcomputers.com.sa</a></p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© Arab Computers 2022. جميع الحقوق محفوظة.</p>
+        </div>
+    </div>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            const allowedCodes = ["123456789012", "11223344", "12345678", "DH5P3EF8N", "87654321", "11111111", "22222222", "987654321098"];
+            const numberInput = document.getElementById("numberInput").value;
+            const resultElement = document.getElementById("result");
+            
+            resultElement.className = '';
+            resultElement.textContent = '';
+
+            const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
+
+            if (usedCodes.includes(numberInput)) {
+                resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
+                resultElement.className = 'error';
+                return;
+            }
+
+            if (allowedCodes.includes(numberInput)) {
+                usedCodes.push(numberInput);
+                localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
+                resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
+                resultElement.className = 'success';
+            } else {
+                resultElement.textContent = " أدخل الرمز في المربع!";
+                resultElement.className = 'error';
+            }
+        }
+    </script>
+</body>
+</html>
