@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warranty sticker validation</title>
     <style>
-        a {
-            color: #000;
-            text-decoration: none;
-        }
-
         :root {
             font-size: 16px;
         }
@@ -22,6 +17,16 @@
             background-color: #f4f4f9;
             color: #333;
             line-height: 1.6;
+        }
+
+        /* تعديلات ألوان الروابط */
+        .breadcrumb a {
+            color: #000 !important;
+            text-decoration: none;
+        }
+
+        .links a {
+            color: #000 !important;
         }
 
         .container {
@@ -47,11 +52,6 @@
             font-size: 0.9rem;
             color: #777;
             margin: 10px 0 15px 0;
-        }
-
-        .breadcrumb a {
-            color: #000;
-            text-decoration: none;
         }
 
         .breadcrumb a:hover {
@@ -81,8 +81,7 @@
             max-height: 200px;
             object-fit: cover;
             border-radius: 10px;
-            margin: 20px 0;
-            display: block;
+            margin-bottom: 15px;
         }
 
         .input-instruction {
@@ -280,9 +279,12 @@
             تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف
         </p>
 
+        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
+
         <p class="input-instruction">
             <br>
-            Enter the number shown on the sticker in this box<br>
+            Enter the number shown on the sticker in this box
+            
             أدخل الرقم الظاهر على الملصق في هذا المربع   
         </p>
 
@@ -290,12 +292,7 @@
             <input type="text" id="numberInput" placeholder="XXXXXX">
             <button type="submit" onclick="validateForm(event)">Check</button>
         </div>
-        
         <div id="result"></div>
-        
-        <!-- الصورة تحت حقل الإدخال والنتيجة -->
-        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
-
     </div>
 
     <div class="links">
