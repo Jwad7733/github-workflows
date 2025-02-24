@@ -9,6 +9,12 @@
             font-size: 16px;
         }
 
+        /* تعديلات ألوان الروابط */
+        .breadcrumb a,
+        .links a {
+            color: #000 !important;
+        }
+
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -17,16 +23,6 @@
             background-color: #f4f4f9;
             color: #333;
             line-height: 1.6;
-        }
-
-        /* تعديلات ألوان الروابط */
-        .breadcrumb a {
-            color: #000 !important;
-            text-decoration: none;
-        }
-
-        .links a {
-            color: #000 !important;
         }
 
         .container {
@@ -58,7 +54,7 @@
             text-decoration: underline;
         }
 
-        h1 {
+        h2 {
             color: #2c3e50;
             font-size: 2rem;
             font-weight: 700;
@@ -81,7 +77,7 @@
             max-height: 200px;
             object-fit: cover;
             border-radius: 10px;
-            margin-bottom: 15px;
+            margin: 20px 0;
         }
 
         .input-instruction {
@@ -151,12 +147,6 @@
             border: 1px solid #f5c6cb;
         }
 
-        .logo-bottom-left {
-            width: 100px;
-            margin: 40px 0 0 20px;
-            float: left;
-        }
-
         .links {
             display: flex;
             justify-content: space-between;
@@ -200,7 +190,7 @@
                 font-size: 14px;
             }
 
-            h1 {
+            h2 {
                 font-size: 1.6rem !important;
                 margin: 15px 0;
             }
@@ -222,12 +212,6 @@
             .input-container {
                 width: 90%;
                 transform: none;
-            }
-
-            .logo-bottom-left {
-                width: 80px;
-                margin-left: 10px;
-                margin-top: 30px !important;
             }
 
             .links {
@@ -279,12 +263,9 @@
             تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف
         </p>
 
-        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
-
         <p class="input-instruction">
             <br>
-            Enter the number shown on the sticker in this box
-            
+            Enter the number shown on the sticker in this box<br>
             أدخل الرقم الظاهر على الملصق في هذا المربع   
         </p>
 
@@ -292,7 +273,10 @@
             <input type="text" id="numberInput" placeholder="XXXXXX">
             <button type="submit" onclick="validateForm(event)">Check</button>
         </div>
+        
         <div id="result"></div>
+        
+        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
     </div>
 
     <div class="links">
@@ -339,17 +323,21 @@
     <script>
         function validateForm(event) {
             event.preventDefault();
-            const allowedCodes = ["123456789012", "2KKDX1RNX0", 
+            const allowedCodes = [
+                "123456789012", 
+                "2KKDX1RNX0", 
                 "3TPNX1PF2Q", 
                 "8TDLW12RNJ", 
-                "3QFD18EA78","11223344", 
+                "3QFD18EA78",
+                "11223344", 
                 "12345678", 
                 "DH5P3EF8N", 
                 "87654321", 
                 "11111111", 
                 "22222222", 
-                "987654321098"];
-                
+                "987654321098"
+            ];
+            
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
             
