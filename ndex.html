@@ -9,6 +9,12 @@
             font-size: 16px;
         }
 
+        /* تغيير لون جميع الروابط */
+        a {
+            color: #000 !important;
+            text-decoration: none;
+        }
+
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -44,11 +50,6 @@
             margin: 10px 0 15px 0;
         }
 
-        .breadcrumb a {
-            color: #000 !important;
-            text-decoration: none;
-        }
-
         .breadcrumb a:hover {
             text-decoration: underline;
         }
@@ -73,17 +74,17 @@
 
         .banner {
             width: 100%;
-            max-height: 250px;
+            max-height: 200px;
             object-fit: cover;
             border-radius: 10px;
-            margin: 20px 0;
+            margin-bottom: 15px;
         }
 
         .input-instruction {
             text-align: center;
             font-weight: 600;
             font-size: 1.1rem;
-            margin: 15px 0 30px 0;
+            margin: 15px 0;
         }
 
         .input-container {
@@ -127,15 +128,11 @@
         }
 
         #result {
-            margin: 30px auto;
-            padding: 25px;
+            margin-top: 15px;
+            margin-bottom: 40px;
+            padding: 15px;
             border-radius: 10px;
-            font-size: 1.3rem;
-            min-height: 80px;
-            width: 80%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 1.1rem;
         }
 
         .success {
@@ -217,12 +214,6 @@
                 transform: none;
             }
 
-            #result {
-                width: 95%;
-                font-size: 1.1rem;
-                padding: 20px;
-            }
-
             .links {
                 flex-direction: column;
                 gap: 20px;
@@ -238,6 +229,10 @@
                 padding-left: 0;
                 border-top: 2px solid #eee;
                 padding-top: 15px;
+            }
+
+            #result {
+                margin-bottom: 30px;
             }
         }
 
@@ -271,6 +266,7 @@
         <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
 
         <p class="input-instruction">
+            <br>
             Enter the number shown on the sticker in this box<br>
             أدخل الرقم الظاهر على الملصق في هذا المربع   
         </p>
@@ -279,7 +275,6 @@
             <input type="text" id="numberInput" placeholder="XXXXXX">
             <button type="submit" onclick="validateForm(event)">Check</button>
         </div>
-        
         <div id="result"></div>
     </div>
 
@@ -327,21 +322,17 @@
     <script>
         function validateForm(event) {
             event.preventDefault();
-            const allowedCodes = [
-                "123456789012", 
-                "2KKDX1RNX0", 
+            const allowedCodes = ["123456789012", "2KKDX1RNX0", 
                 "3TPNX1PF2Q", 
                 "8TDLW12RNJ", 
-                "3QFD18EA78",
-                "11223344", 
+                "3QFD18EA78","11223344", 
                 "12345678", 
                 "DH5P3EF8N", 
                 "87654321", 
                 "11111111", 
                 "22222222", 
-                "987654321098"
-            ];
-            
+                "987654321098"];
+                
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
             
