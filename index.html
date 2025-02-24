@@ -1,6 +1,3 @@
-ها هو الكود النهائي مع تعديل لون الروابط إلى الأسود:
-
-```html
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -8,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warranty sticker validation</title>
     <style>
-        /* إضافة قاعدة عامة للروابط */
         a {
             color: #000;
             text-decoration: none;
@@ -54,7 +50,7 @@
         }
 
         .breadcrumb a {
-            color: #000; /* تغيير اللون من الأزرق إلى الأسود */
+            color: #000;
             text-decoration: none;
         }
 
@@ -85,7 +81,8 @@
             max-height: 200px;
             object-fit: cover;
             border-radius: 10px;
-            margin-bottom: 15px;
+            margin: 20px 0;
+            display: block;
         }
 
         .input-instruction {
@@ -283,8 +280,6 @@
             تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف
         </p>
 
-        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
-
         <p class="input-instruction">
             <br>
             Enter the number shown on the sticker in this box<br>
@@ -295,7 +290,12 @@
             <input type="text" id="numberInput" placeholder="XXXXXX">
             <button type="submit" onclick="validateForm(event)">Check</button>
         </div>
+        
         <div id="result"></div>
+        
+        <!-- الصورة تحت حقل الإدخال والنتيجة -->
+        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
+
     </div>
 
     <div class="links">
@@ -380,26 +380,3 @@
     </script>
 </body>
 </html>
-```
-
-التغييرات الرئيسية:
-1. إضافة قاعدة CSS عامة لجميع الروابط:
-```css
-a {
-    color: #000;
-    text-decoration: none;
-}
-```
-
-2. تعديل لون رواقم breadcrumb من الأزرق (#3498db) إلى الأسود:
-```css
-.breadcrumb a {
-    color: #000;
-}
-```
-
-3. إزالة التكرار في عنصر الـ result (كان موجود مرتين في الكود الأصلي)
-
-4. تحسين تنسيق الكود وتنظيمه
-
-ملاحظة: قد تحتاج الروابط في الـ footer إلى تعديل لونها إذا كان الخلفية الداكنة تجعلها غير واضحة، لكن حسب الطلب تم جعل جميع الروابط سوداء.
