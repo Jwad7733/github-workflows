@@ -332,16 +332,10 @@
                 <p><a href="mailto:sales@arabcomputers.com.sa">للمبيعات المؤسسية: sales@arabcomputers.com.sa</a></p>
             </div>
         </div>
-
-        <div class="footer">
-            <p>© Arab Computers 2022. جميع الحقوق محفوظة.</p>
-        </div>
-    </div>
-
     <script>
         function validateForm(event) {
             event.preventDefault();
-            const allowedCodes = ["123456789012", "11223344", "12345678", "DH5P3EF8N", "87654321", "11111111", "22222222", "987654321098"];
+            const allowedCodes = ["123456789012", "2KKDX1RNX0",  "DH5P3EF8N", "87654321", "11111111", "22222222", "987654321098"];
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
             
