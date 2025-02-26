@@ -164,11 +164,6 @@
             text-align: left;
         }
 
-        .left-section {
-            flex: 1;
-            text-align: center; /* توسيط النص في القسم الأيسر */
-        }
-
         .right-section {
             flex: 1;
             margin-left: 20px;
@@ -190,6 +185,12 @@
             text-align: center !important;
             font-weight: bold !important; /* جعل النص عريضًا */
             color: black !important; /* تغيير لون النص إلى أسود */
+        }
+
+        /* قسم DPP أسفل Useful Links */
+        .dpp-section {
+            text-align: center;
+            margin-top: 20px;
         }
 
         @media (max-width: 768px) {
@@ -254,13 +255,6 @@
     </div>
 
     <div class="links">
-        <div class="left-section">
-            <div>
-                <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="Website Banner" class="banner">
-            </div>
-            <p class="center-text">DPP</p> <!-- توسيط DPP في القسم الأيسر -->
-        </div>
-
         <div class="right-section">
             <h2>Useful Links</h2>
             <p><a href="#">Home</a></p>
@@ -268,6 +262,10 @@
             <p><a href="#">Contact Us</a></p>
         </div>
         
+        <div class="dpp-section">
+            <p class="center-text">DPP</p> <!-- توسيط DPP أسفل Useful Links -->
+        </div>
+
         <div class="right-section">
             <h2>Products</h2>
             <p><a href="#">iPhone</a></p>
