@@ -54,9 +54,9 @@
             text-decoration: underline;
         }
 
-        h1 {
+        h2 {
             color: #2c3e50;
-            font-size: 2rem;
+            font-size: 2rem; /* تم تكبير الخط بدرجة واحدة */
             font-weight: 700;
             text-align: center;
             margin: 20px 0;
@@ -65,8 +65,8 @@
 
         .main-description {
             text-align: center;
-            font-weight: normal; /* تغيير الخط إلى عادي */
-            font-size: 1.2rem;
+            font-weight: normal; /* الخط عادي */
+            font-size: 1rem; /* تم تصغير الخط بدرجتين (من 1.2rem إلى 1rem) */
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto 30px auto;
@@ -82,12 +82,11 @@
 
         .input-instruction {
             text-align: center;
-            font-weight: normal; /* تغيير الخط إلى عادي */
-            font-size: 1.1rem;
+            font-weight: normal; /* الخط عادي */
+            font-size: 0.9rem; /* تم تصغير الخط بدرجتين (من 1.1rem إلى 0.9rem) */
             margin: 15px 0;
         }
 
-        /* التعديلات الجديدة */
         .input-container {
             width: 45%;
             max-width: 300px;
@@ -113,7 +112,7 @@
 
         .input-container button {
             padding: 0 20px;
-            background-color: #a8822b;
+            background-color: #a8822b; /* اللون الأغمق */
             color: white;
             border: none;
             font-size: 0.9rem;
@@ -126,7 +125,7 @@
 
         .input-container button.pressed {
             background-color: white !important;
-            color: #a8822b !important;
+            color: #a8822b !important; /* اللون الأغمق للنص */
         }
 
         #result {
@@ -188,7 +187,7 @@
             </div>
         </div>
 
-        <h2>Warranty sticker validation</h2>
+        <h2>Warranty sticker validation</h2> <!-- تم تكبير هذا النص -->
         
         <p class="main-description">
             Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.<br>
@@ -248,7 +247,7 @@
                     resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
                     resultElement.className = 'success';
                 } else {
-                    resultElement.textContent = " هذا الرمز خطأ ❌ أدخل الرمز في المربع!";
+                    resultElement.textContent = " Code not found ❌ هذا الرمز غير موجود !";
                     resultElement.className = 'error';
                 }
                 
