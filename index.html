@@ -45,12 +45,12 @@
         }
 
         .breadcrumb a {
-            color: #000 !important; /* تم التعديل إلى الأسود */
+            color: #000 !important;
             text-decoration: none;
         }
 
         .breadcrumb a:hover {
-            color: #333 !important; /* لون داكن عند التحويم */
+            color: #333 !important;
             text-decoration: underline;
         }
 
@@ -88,15 +88,14 @@
         }
 
         .input-container {
-            width: 70%;
-            max-width: 400px;
+            width: 60%;
+            max-width: 350px;
             display: flex;
             align-items: center;
             border: 2px solid #3498db;
             border-radius: 25px 0 0 25px;
             overflow: hidden;
             margin: 10px auto;
-            transform: scale(0.95);
         }
 
         .input-container input {
@@ -109,30 +108,26 @@
         }
 
         .input-container button {
-            padding: 12px 20px;
+            padding: 12px 25px;
             background-color: #B8860B;
             color: white;
             border: none;
             font-size: 1rem;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            border-radius: 0;
+            transition: background-color 0.3s ease;
+            height: 46px;
         }
 
         .input-container button:hover {
             background-color: #996515;
         }
 
-        .input-container button:active {
-            transform: scale(0.95);
-        }
-
         #result {
-            margin-top: 15px;
-            margin-bottom: 80px;
+            margin: 20px auto;
             padding: 15px;
             border-radius: 10px;
             font-size: 1.1rem;
+            max-width: 350px;
         }
 
         .success {
@@ -149,7 +144,7 @@
 
         .logo-bottom-left {
             width: 100px;
-            margin: 80px 0 0 20px;
+            margin: 40px 0 0 20px;
             float: left;
         }
 
@@ -159,27 +154,6 @@
             text-align: left;
             margin: 25px 0;
             flex-wrap: wrap;
-        }
-
-        .left-section {
-            display: flex;
-            gap: 25px;
-        }
-
-        .right-section {
-            border-left: 2px solid #eee;
-            padding-left: 25px;
-        }
-
-        .links h3 {
-            color: #2c3e50;
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-        }
-
-        .links p {
-            margin: 4px 0;
-            line-height: 1.4;
         }
 
         .footer {
@@ -192,67 +166,21 @@
         }
 
         @media (max-width: 768px) {
-            :root {
-                font-size: 14px;
-            }
-
-            h1 {
-                font-size: 1.6rem !important;
-                margin: 15px 0;
-            }
-
-            .main-description {
-                font-size: 1rem;
-                padding: 0 15px;
-            }
-
-            .logo {
-                width: 80px;
-            }
-
-            .breadcrumb {
-                font-size: 0.8rem;
-                margin-bottom: 15px;
-            }
-
             .input-container {
-                width: 90%;
-                transform: none;
+                width: 80%;
+                max-width: 300px;
             }
-
-            .logo-bottom-left {
-                width: 80px;
-                margin-left: 10px;
-                margin-top: 60px !important;
-            }
-
-            #result {
-                margin-bottom: 60px;
-            }
-
-            .links {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .left-section {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .right-section {
-                border-left: none;
-                padding-left: 0;
-                border-top: 2px solid #eee;
-                padding-top: 15px;
+            
+            .input-container button {
+                padding: 12px 20px;
             }
         }
 
         @media (max-width: 480px) {
-            :root {
-                font-size: 13px;
+            .input-container {
+                width: 90%;
             }
-
+            
             .input-container button {
                 padding: 10px 15px;
             }
@@ -278,9 +206,8 @@
         <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
 
         <p class="input-instruction">
-            <br>
             Enter the number shown on the sticker in this box<br>
-            أدخل الرقم الموجود على الملصق هنا   
+            أدخل الرقم الظاهر على الملصق في هذا المربع   
         </p>
 
         <div class="input-container">
@@ -291,13 +218,8 @@
         <div id="result"></div>
     </div>
 
-    <div class="links">
-        <div class="left-section">
-            <div>
-                <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="شعار" class="logo-bottom-left">
-                
-                    
-        
+    <div class="footer">
+        <p>© Arab Computers 2022. جميع الحقوق محفوظة.</p>
     </div>
 
     <script>
