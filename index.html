@@ -109,17 +109,18 @@
 
         .input-container button {
             padding: 12px 25px;
-            background-color: #B8860B;
+            background-color: #FFD700; /* ذهبي فاتح */
             color: white;
             border: none;
             font-size: 1rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
             height: 46px;
         }
 
-        .input-container button:hover {
-            background-color: #996515;
+        .input-container button:active {
+            background-color: white !important;
+            color: #FFD700 !important;
         }
 
         #result {
@@ -140,20 +141,6 @@
             background-color: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
-        }
-
-        .logo-bottom-left {
-            width: 100px;
-            margin: 40px 0 0 20px;
-            float: left;
-        }
-
-        .links {
-            display: flex;
-            justify-content: space-between;
-            text-align: left;
-            margin: 25px 0;
-            flex-wrap: wrap;
         }
 
         .footer {
@@ -225,6 +212,7 @@
     <script>
         function validateForm(event) {
             event.preventDefault();
+            const button = event.target;
             const allowedCodes = ["123456789012", "2KKDX1RNX0", 
                 "3TPNX1PF2Q", 
                 "8TDLW12RNJ", 
@@ -240,26 +228,33 @@
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
             
+            // تغيير لون الزر أثناء الضغط
+            button.style.backgroundColor = "#FFFFFF";
+            button.style.color = "#FFD700";
+
             resultElement.className = '';
             resultElement.textContent = '';
 
             const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
 
-            if (usedCodes.includes(numberInput)) {
-                resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
-                resultElement.className = 'error';
-                return;
-            }
-
-            if (allowedCodes.includes(numberInput)) {
-                usedCodes.push(numberInput);
-                localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
-                resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
-                resultElement.className = 'success';
-            } else {
-                resultElement.textContent = " هذا الرمز خطأ ❌ أدخل الرمز في المربع!";
-                resultElement.className = 'error';
-            }
+            setTimeout(() => {
+                if (usedCodes.includes(numberInput)) {
+                    resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
+                    resultElement.className = 'error';
+                } else if (allowedCodes.includes(numberInput)) {
+                    usedCodes.push(numberInput);
+                    localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
+                    resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
+                    resultElement.className = 'success';
+                } else {
+                    resultElement.textContent = " هذا الرمز خطأ ❌ أدخل الرمز في المربع!";
+                    resultElement.className = 'error';
+                }
+                
+                // إعادة لون الزر الأصلي
+                button.style.backgroundColor = "#FFD700";
+                button.style.color = "white";
+            }, 500);
         }
     </script>
 </body>
