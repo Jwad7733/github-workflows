@@ -93,8 +93,6 @@
             display: flex;
             align-items: center;
             border: 2px solid #3498db;
-            border-radius: 25px 0 0 25px;
-            overflow: hidden;
             margin: 10px auto;
         }
 
@@ -104,12 +102,11 @@
             border: none;
             font-size: 1rem;
             outline: none;
-            border-radius: 25px 0 0 25px;
         }
 
         .input-container button {
             padding: 12px 25px;
-            background-color: #cba135; /* ذهبي لامع اطلسي */
+            background-color: #cba135;
             color: white;
             border: none;
             font-size: 1rem;
@@ -120,7 +117,7 @@
 
         .input-container button:active {
             background-color: white !important;
-            color: #FFD700 !important;
+            color: #cba135 !important;
         }
 
         #result {
@@ -194,7 +191,7 @@
 
         <p class="input-instruction">
             Enter the number shown on the sticker in this box<br>
-            أدخل الرقم الموجود الملصق هنا    
+            أدخل الرقم الظاهر على الملصق في هذا المربع   
         </p>
 
         <div class="input-container">
@@ -213,24 +210,20 @@
         function validateForm(event) {
             event.preventDefault();
             const button = event.target;
-            const allowedCodes = ["123456789012", "2KKDX1RNX0", 
-                "3TPNX1PF2Q", 
-                "8TDLW12RNJ", 
+            const allowedCodes = [
+                "123456789012", "2KKDX1RNX0", 
+                "3TPNX1PF2Q", "8TDLW12RNJ", 
                 "3QFD18EA78","11223344", 
-                "12345678", 
-                "DH5P3EF8N", 
-                "87654321", 
-                "11111111", 
-                "22222222", 
-                "987654321098"
+                "12345678", "DH5P3EF8N", 
+                "87654321", "11111111", 
+                "22222222", "987654321098"
             ];
             
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
             
-            // تغيير لون الزر أثناء الضغط
             button.style.backgroundColor = "#FFFFFF";
-            button.style.color = "#FFD700";
+            button.style.color = "#cba135";
 
             resultElement.className = '';
             resultElement.textContent = '';
@@ -251,7 +244,6 @@
                     resultElement.className = 'error';
                 }
                 
-                // إعادة لون الزر الأصلي
                 button.style.backgroundColor = "#cba135";
                 button.style.color = "white";
             }, 500);
