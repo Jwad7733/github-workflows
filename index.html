@@ -87,17 +87,17 @@
             margin: 15px 0;
         }
 
+        /* التعديلات الجديدة */
         .input-container {
             width: 45%;
             max-width: 300px;
             display: flex;
             align-items: center;
             border: 2px solid #3498db;
-            border-radius: 0 25px 25px 0;
+            border-radius: 25px 0 0 25px; /* مدور من اليسار */
             overflow: hidden;
             margin: 10px auto;
             height: 40px;
-            flex-direction: row-reverse;
         }
 
         .input-container input {
@@ -106,7 +106,7 @@
             border: none;
             font-size: 0.9rem;
             outline: none;
-            border-radius: 0 25px 25px 0;
+            border-radius: 25px 0 0 25px; /* مدور من اليسار */
             text-align: right;
             height: 100%;
         }
@@ -120,7 +120,8 @@
             cursor: pointer;
             transition: all 0.3s ease;
             height: 100%;
-            border-radius: 25px 0 0 25px;
+            border-radius: 0; /* مستطيل كامل */
+            min-width: 80px;
         }
 
         .input-container button.pressed {
@@ -202,8 +203,8 @@
         </p>
 
         <div class="input-container">
-            <button type="submit" onclick="validateForm(event)">Check</button>
             <input type="text" id="numberInput" placeholder="XXXXXX">
+            <button type="submit" onclick="validateForm(event)">Check</button>
         </div>
 
         <div id="result"></div>
