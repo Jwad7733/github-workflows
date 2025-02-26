@@ -93,33 +93,37 @@
             display: flex;
             align-items: center;
             border: 2px solid #3498db;
-            border-radius: 25px 0 0 25px;
+            border-radius: 0 25px 25px 0;
             overflow: hidden;
             margin: 10px auto;
+            height: 40px;
+            flex-direction: row-reverse;
         }
 
         .input-container input {
             flex: 1;
-            padding: 10px;
+            padding: 8px 12px;
             border: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             outline: none;
-            border-radius: 25px 0 0 25px;
+            border-radius: 0 25px 25px 0;
+            text-align: right;
+            height: 100%;
         }
 
         .input-container button {
-            padding: 12px 25px;
+            padding: 0 20px;
             background-color: #cba135;
             color: white;
             border: none;
-            font-size: 1rem;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            height: 46px;
-            border-radius: 0;
+            height: 100%;
+            border-radius: 25px 0 0 25px;
         }
 
-        .input-container button:active {
+        .input-container button.pressed {
             background-color: white !important;
             color: #cba135 !important;
         }
@@ -198,8 +202,8 @@
         </p>
 
         <div class="input-container">
-            <input type="text" id="numberInput" placeholder="XXXXXX">
             <button type="submit" onclick="validateForm(event)">Check</button>
+            <input type="text" id="numberInput" placeholder="XXXXXX">
         </div>
 
         <div id="result"></div>
@@ -225,8 +229,8 @@
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
             
-            button.style.backgroundColor = "#FFFFFF";
-            button.style.color = "#cba135";
+            // تغيير لون الزر عند الضغط
+            button.classList.add('pressed');
 
             resultElement.className = '';
             resultElement.textContent = '';
@@ -247,8 +251,8 @@
                     resultElement.className = 'error';
                 }
                 
-                button.style.backgroundColor = "#cba135";
-                button.style.color = "white";
+                // إعادة لون الزر الأصلي
+                button.classList.remove('pressed');
             }, 500);
         }
     </script>
