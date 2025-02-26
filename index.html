@@ -56,7 +56,7 @@
 
         h2 {
             color: #2c3e50;
-            font-size: 2rem; /* تم تكبير الخط بدرجة واحدة */
+            font-size: 2rem;
             font-weight: 700;
             text-align: center;
             margin: 20px 0;
@@ -65,8 +65,8 @@
 
         .main-description {
             text-align: center;
-            font-weight: normal; /* الخط عادي */
-            font-size: 1rem; /* تم تصغير الخط بدرجتين (من 1.2rem إلى 1rem) */
+            font-weight: normal;
+            font-size: 1rem;
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto 30px auto;
@@ -82,8 +82,8 @@
 
         .input-instruction {
             text-align: center;
-            font-weight: normal; /* الخط عادي */
-            font-size: 0.9rem; /* تم تصغير الخط بدرجتين (من 1.1rem إلى 0.9rem) */
+            font-weight: normal;
+            font-size: 0.9rem;
             margin: 15px 0;
         }
 
@@ -92,7 +92,7 @@
             max-width: 300px;
             display: flex;
             align-items: center;
-            border: 2px solid #cccccc; /* لون الحدود رمادي */
+            border: 2px solid #cccccc;
             border-radius: 25px 0 0 25px;
             overflow: hidden;
             margin: 10px auto;
@@ -106,13 +106,13 @@
             font-size: 0.9rem;
             outline: none;
             border-radius: 25px 0 0 25px;
-            text-align: left; /* محاذاة النص لليسار */
+            text-align: left;
             height: 100%;
         }
 
         .input-container button {
             padding: 0 20px;
-            background-color: #a8822b; /* اللون الأغمق */
+            background-color: #a8822b;
             color: white;
             border: none;
             font-size: 0.9rem;
@@ -125,7 +125,7 @@
 
         .input-container button.pressed {
             background-color: white !important;
-            color: #a8822b !important; /* اللون الأغمق للنص */
+            color: #a8822b !important;
         }
 
         #result {
@@ -157,6 +157,20 @@
             text-align: left;
         }
 
+        .links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .left-section, .right-section {
+            text-align: left;
+        }
+
+        .right-section {
+            margin-left: 20px;
+        }
+
         @media (max-width: 768px) {
             .input-container {
                 width: 70%;
@@ -164,6 +178,15 @@
             
             .input-container button {
                 padding: 12px 20px;
+            }
+
+            .links {
+                flex-direction: column;
+            }
+
+            .right-section {
+                margin-left: 0;
+                margin-top: 20px;
             }
         }
 
@@ -187,7 +210,7 @@
             </div>
         </div>
 
-        <h2>Warranty sticker validation</h2> <!-- تم تكبير هذا النص -->
+        <h2>Warranty sticker validation</h2>
         
         <p class="main-description">
             Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.<br>
@@ -204,52 +227,52 @@
         <div class="input-container">
             <input type="text" id="numberInput" placeholder="XXXXXX">
             <button type="submit" onclick="validateForm(event)">Check</button>
-               </div>
-<div id="result"></div>
-         
-    </div>
+        </div>
+
         <div id="result"></div>
-    
+    </div>
+
     <div class="links">
-            <div class="left-section">
-                <div>
-            <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="بانر الموقع" class="banner">
-        <div class="links"> 
-
-            <div class="right-section">
-                    <h2>روابط مفيدة</h2>
-                    <p><a href="#">بيت</a></p>
-                    <p><a href="#">نقطة البيع</a></p>
-                    <p><a href="#">اتصل بنا</a></p>
-                    <p><a href="#">النيابة العامة</a></p>
-                </div>
-                
-                <div>
-                    <h2>منتجات</h2>
-                    <p><a href="#">آيفون</a></p>
-                    <p><a href="#">ماك</a></p>
-                    <p><a href="#">آيباد</a></p>
-                    <p><a href="#">آيبود</a></p>
-                    <p><a href="#">تلفزيون آبل</a></p>
-                    <p><a href="#">ساعة ابل</a></p>
-                </div>
-                
-                <div>
-                    <h2>معلومة</h2>
-                    <p><a href="##">تعلم كيف</a></p>
-                    <p><a href="##">مقدمي الخدمة</a></p>
-                    <p><a href="##">الشروط والأحكام</a></p>
-                    <p><a href="##">اتصل بنا</a></p>
-                </div>
-            </div>
-
-            <div class="right-section">
-                <h2>الدعم والمبيعات</h2>
-                <p><a href="#">للصيانة: زيارة AC-Care</a></p>
-                <p><a href="#">للمبيعات الفردية: نقطة البيع</a></p>
-                <p><a href="mailto:sales@arabcomputers.com.sa">للمبيعات المؤسسية: sales@arabcomputers.com.sa</a></p>
+        <div class="left-section">
+            <div>
+                <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="بانر الموقع" class="banner">
             </div>
         </div>
+
+        <div class="right-section">
+            <h2>روابط مفيدة</h2>
+            <p><a href="#">بيت</a></p>
+            <p><a href="#">نقطة البيع</a></p>
+            <p><a href="#">اتصل بنا</a></p>
+            <p><a href="#">النيابة العامة</a></p>
+        </div>
+        
+        <div class="right-section">
+            <h2>منتجات</h2>
+            <p><a href="#">آيفون</a></p>
+            <p><a href="#">ماك</a></p>
+            <p><a href="#">آيباد</a></p>
+            <p><a href="#">آيبود</a></p>
+            <p><a href="#">تلفزيون آبل</a></p>
+            <p><a href="#">ساعة ابل</a></p>
+        </div>
+        
+        <div class="right-section">
+            <h2>معلومة</h2>
+            <p><a href="##">تعلم كيف</a></p>
+            <p><a href="##">مقدمي الخدمة</a></p>
+            <p><a href="##">الشروط والأحكام</a></p>
+            <p><a href="##">اتصل بنا</a></p>
+        </div>
+
+        <div class="right-section">
+            <h2>الدعم والمبيعات</h2>
+            <p><a href="#">للصيانة: زيارة AC-Care</a></p>
+            <p><a href="#">للمبيعات الفردية: نقطة البيع</a></p>
+            <p><a href="mailto:sales@arabcomputers.com.sa">للمبيعات المؤسسية: sales@arabcomputers.com.sa</a></p>
+        </div>
+    </div>
+
     <div class="footer">
         <p>© Arab Computers 2022. جميع الحقوق محفوظة.</p>
     </div>
@@ -270,7 +293,6 @@
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
             
-            // تغيير لون الزر عند الضغط
             button.classList.add('pressed');
 
             resultElement.className = '';
@@ -292,7 +314,6 @@
                     resultElement.className = 'error';
                 }
                 
-                // إعادة لون الزر الأصلي
                 button.classList.remove('pressed');
             }, 500);
         }
