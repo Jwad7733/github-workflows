@@ -155,51 +155,35 @@
             color: white;
             border-radius: 10px;
             text-align: left;
+            margin-bottom: 70px !important;
         }
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #fff;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 20px;
-    border-top: 1px solid #eee;
-    z-index: 1000;
-}
 
-.nav-icon {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            border-top: 1px solid #eee;
+            z-index: 1000;
+        }
 
-.nav-icon svg {
-    width: 28px;
-    height: 28px;
-    color: #2c3e50;
-}
+        .nav-icon {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
 
-.footer {
-    margin-bottom: 70px !important;
-}
+        .nav-icon svg {
+            width: 28px;
+            height: 28px;
+            color: #2c3e50;
+        }
 
-@media (max-width: 480px) {
-    .nav-icon svg {
-        width: 24px;
-        height: 24px;
-    }
-}
-        <div class="bottom-nav">
-    <button class="nav-icon">
-        <svg viewBox="0 0 24 24"><!-- أيقونة القائمة --></svg>
-    </button>
-    <a href="#" class="nav-icon">
-        <svg viewBox="0 0 24 24"><!-- أيقونة البيت --></svg>
-    </a>
-</div>
         .links {
             display: flex;
             justify-content: space-between;
@@ -223,14 +207,12 @@
             font-size: 0.9rem;
         }
 
-        /* توسيط النصوص المحددة وجعلها عريضة وسوداء */
         .center-text {
             text-align: center !important;
-            font-weight: bold !important; /* جعل النص عريضًا */
-            color: black !important; /* تغيير لون النص إلى أسود */
+            font-weight: bold !important;
+            color: black !important;
         }
 
-        /* قسم DPP أسفل Useful Links */
         .dpp-section {
             text-align: center;
             margin-top: 20px;
@@ -263,10 +245,15 @@
             .input-container button {
                 padding: 10px 15px;
             }
+            
+            .nav-icon svg {
+                width: 24px;
+                height: 24px;
+            }
         }
     </style>
-    </head>
-    <body>
+</head>
+<body>
     <div class="container">
         <div class="header-content">
             <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="Website Logo" class="logo">
@@ -296,29 +283,28 @@
 
         <div id="result"></div>
     </div>
-<div id="result"></div>
-    
+
     <div class="links">
-            <div class="left-section">
-                <div>
+        <div class="left-section">
             <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="بانر الموقع" class="banner">
-        <div class="links">
-            
+        </div>
+        
         <div class="right-section">
             <h2>Useful Links</h2>
             <p><a href="#">Home</a></p>
             <p><a href="#">Point Of Sales</a></p>
             <p><a href="#">Contact Us</a></p>
-        </div>
             <div class="dpp-section">
-            <p class="center-text">DPP</p> <!-- توسيط DPP أسفل Useful Links -->
-        </div>  
+                <p class="center-text">DPP</p>
+            </div>  
+        </div>
+
         <div class="right-section">
             <div class="dpp-section">
-            <p class="center-text">iPod</p> <!-- توسيط iPod أسفل Useful Links -->
-            <p class="center-text">Apple TV</p> <!-- توسيط Apple TV أسفل Useful Links -->
-            <p class="center-text">Apple Watch TV </p> <!-- توسيط Apple Watch TV  أسفل Useful Links -->
-        </div>
+                <p class="center-text">iPod</p>
+                <p class="center-text">Apple TV</p>
+                <p class="center-text">Apple Watch TV</p>
+            </div>
             <h2>Products</h2>
             <p><a href="#">iPhone</a></p>
             <p><a href="#">Mac</a></p>
@@ -326,64 +312,17 @@
         </div>
         
         <div class="right-section">
-            
-        <div class="dpp-section">
-            <p class="center-text">Terms and Conditions</p> <!-- توسيط Terms and Conditions أسفل Useful Links -->
-        </div> 
+            <div class="dpp-section">
+                <p class="center-text">Terms and Conditions</p>
+            </div> 
             <h2>Information</h2>
             <p><a href="##">Learn How</a></p>
             <p><a href="##">Service Providers</a></p>
             <p><a href="##">Contact Us</a></p>
         </div>
-       
 
         <div class="right-section">
             <h2>Support and Sales</h2>
             <p><a href="#">For Maintenance: Visit AC-Care</a></p>
             <p><a href="#">For Individual Sales: Point of Sales</a></p>
-            <p><a href="mailto:sales@arabcomputers.com.sa">For Corporate or Channels Sales: sales@arabcomputers.com.sa</a></p>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p>© Arab Computers 2022. All rights reserved.</p>
-    </div>
-                    
-    <script>
-        function validateForm(event) {
-            event.preventDefault();
-            const button = event.target;
-            const allowedCodes = ["2KKDX1RNX0", 
-"3ANMH9TBMT",  
-"3QFD18EA78" ];
-            
-            const numberInput = document.getElementById("numberInput").value;
-            const resultElement = document.getElementById("result");
-            
-            button.classList.add('pressed');
-
-            resultElement.className = '';
-            resultElement.textContent = '';
-
-            const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
-
-            setTimeout(() => {
-                if (usedCodes.includes(numberInput)) {
-                    resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
-                    resultElement.className = 'error';
-                } else if (allowedCodes.includes(numberInput)) {
-                    usedCodes.push(numberInput);
-                    localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
-                    resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
-                    resultElement.className = 'success';
-                } else {
-                    resultElement.textContent = " Code not found ❌ هذا الرمز غير موجود !";
-                    resultElement.className = 'error';
-                }
-                
-                button.classList.remove('pressed');
-            }, 500);
-        }
-    </script>
-</body>
- </html>
+            <p><a href="mailto:sales@arabcomputers.com.sa">For Corporate or Channels Sales: sales@arabcomputers.com.sa</a></p
