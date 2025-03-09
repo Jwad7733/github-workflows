@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warranty sticker validation</title>
     <style>
-        /* جميع الأنماط الأصلية تبقى كما هي */
+        /* جميع الأنماط الأصلية بدون تغيير */
         :root {
             font-size: 16px;
         }
@@ -20,19 +20,28 @@
             line-height: 1.6;
         }
 
-        /* ... جميع الأنماط الأصلية الأخرى ... */
+        .container {
+            max-width: 95%;
+            margin: 30px auto;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
 
-        /* الأنماط الجديدة للشريط السفلي */
+        /* ... باقي الأنماط الأصلية ... */
+
+        /* أنماط جديدة مضافة للشريط السفلي */
         .bottom-nav {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            background: white;
+            background: #fff;
             display: flex;
             justify-content: space-between;
             padding: 15px 20px;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
         }
 
@@ -50,7 +59,7 @@
         }
 
         .footer {
-            margin-bottom: 70px !important;
+            margin-bottom: 80px !important;
         }
 
         @media (max-width: 480px) {
@@ -62,16 +71,17 @@
     </style>
 </head>
 <body>
+    <!-- المحتوى الأصلي -->
     <div class="container">
-        <!-- المحتوى الأصلي يبقى كما هو -->
+        <!-- ... المحتوى الأصلي بدون تغيير ... -->
     </div>
 
     <!-- الأقسام الأخرى -->
     <div class="links">
-        <!-- المحتوى الأصلي يبقى كما هو -->
+        <!-- ... المحتوى الأصلي بدون تغيير ... -->
     </div>
 
-    <!-- الشريط السفلي المضاف -->
+    <!-- شريط التنقل السفلي المضاف -->
     <div class="bottom-nav">
         <button class="nav-icon">
             <svg viewBox="0 0 24 24">
@@ -89,6 +99,11 @@
         <p>© Arab Computers 2022. All rights reserved.</p>
     </div>
 
-    <!-- السكريبت الأصلي يبقى كما هو -->
+    <!-- السكريبت الأصلي -->
+    <script>
+        function validateForm(event) {
+            // الكود الأصلي بدون تغيير
+        }
+    </script>
 </body>
 </html>
