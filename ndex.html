@@ -1,45 +1,54 @@
-<div class="links">
-    <div class="left-section">
-        <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="بانر الموقع" class="banner">
-    </div>
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... باقي العناصر الأصلية ... -->
+    <style>
+        /* أنماط جديدة لإظهار العناصر تحت "روابط مفيدة" */
+        .dpp-section {
+            position: relative;
+        }
+
+        .dpp-section .extra-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .dpp-section:hover .extra-content {
+            display: block;
+        }
+
+        .extra-content p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- ... باقي المحتوى الأصلي ... -->
+
     <div class="right-section">
         <h2>Useful Links</h2>
         <p><a href="#">Home</a></p>
         <p><a href="#">Point Of Sales</a></p>
         <p><a href="#">Contact Us</a></p>
-        
-        <!-- العناصر المٌوسطة -->
-        <div class="dpp-section" style="margin: 20px auto; display: block;">
-            <p class="center-text">DPP</p>
-            <p class="center-text">iPod</p>
-            <p class="center-text">Apple TV</p>
-            <p class="center-text">Apple Watch TV</p>
-        </div>
-    </div>
-
-    <!-- باقي الأقسام بدون تغيير -->
-    <div class="right-section">
-        <h2>Products</h2>
-        <p><a href="#">iPhone</a></p>
-        <p><a href="#">Mac</a></p>
-        <p><a href="#">iPad</a></p>
-    </div>
-    
-    <div class="right-section">
         <div class="dpp-section">
-            <p class="center-text">Terms and Conditions</p>
-        </div> 
-        <h2>Information</h2>
-        <p><a href="##">Learn How</a></p>
-        <p><a href="##">Service Providers</a></p>
-        <p><a href="##">Contact Us</a></p>
+            <p class="center-text">DPP</p>
+            <!-- المحتوى الإضافي -->
+            <div class="extra-content">
+                <p class="center-text">iPod</p>
+                <p class="center-text">Apple TV</p>
+                <p class="center-text">Apple Watch TV</p>
+            </div>
+        </div>  
     </div>
 
-    <div class="right-section">
-        <h2>Support and Sales</h2>
-        <p><a href="#">For Maintenance: Visit AC-Care</a></p>
-        <p><a href="#">For Individual Sales: Point of Sales</a></p>
-        <p><a href="mailto:sales@arabcomputers.com.sa">For Corporate or Channels Sales: sales@arabcomputers.com.sa</a></p>
-    </div>
-</div>
+    <!-- ... باقي المحتوى الأصلي ... -->
+</body>
+</html>
