@@ -41,7 +41,7 @@
         }
 
         .header-content.hide {
-            opacity: 0; /* إخفاء الشعار عند التمرير لأعلى */
+            opacity: 0; /* إخفاء الشعار عند التمرير لأسفل */
         }
 
         .logo {
@@ -199,7 +199,13 @@
         }
 
         .bottom-nav .nav-icon svg {
-            fill: white; /* جعل لون أيقونة الهوم أبيض */
+            fill: none; /* إزالة التعبئة */
+            stroke: black; /* جعل الخط أسود */
+            stroke-width: 2; /* سماكة الخط */
+        }
+
+        .bottom-nav .nav-icon:hover svg {
+            stroke: #a8822b; /* تغيير لون الخط عند التحويم */
         }
 
         .nav-icon {
@@ -414,7 +420,7 @@
             }, 500);
         }
 
-        // جعل الشعار يختفي عند التمرير لأعلى
+        // جعل الشعار يختفي عند التمرير لأسفل
         window.addEventListener("scroll", () => {
             const header = document.querySelector(".header-content");
             if (window.scrollY > 50) {
