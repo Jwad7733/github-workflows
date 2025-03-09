@@ -1,163 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warranty sticker validation</title>
-    <style>
-        /* جميع الأنماط الأصلية بدون تغيير */
-        :root {
-            font-size: 16px;
-        }
+<!-- أضف هذا قبل </body> -->
+<div class="bottom-nav">
+    <button class="nav-icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+    </button>
+    <a href="#" class="nav-icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
+        </svg>
+    </a>
+</div>
 
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-            line-height: 1.6;
-        }
+<style>
+/* أنماط جديدة بدون تأثير على التنسيقات الحالية */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-top: 1px solid #eee;
+    z-index: 1000;
+}
 
-        .container {
-            max-width: 95%;
-            margin: 30px auto;
-            padding: 15px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
+.nav-icon {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
 
-        /* ... باقي الأنماط الأصلية ... */
+.nav-icon svg {
+    width: 28px;
+    height: 28px;
+}
 
-        /* أنماط جديدة للشريط السفلي */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 20px;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-
-        .nav-icon {
-            background: none;
-            border: none;
-            padding: 8px;
-            cursor: pointer;
-        }
-
-        .nav-icon svg {
-            width: 28px;
-            height: 28px;
-            color: #2c3e50;
-        }
-
-        .footer {
-            margin-bottom: 80px !important;
-        }
-
-        @media (max-width: 480px) {
-            .nav-icon svg {
-                width: 24px;
-                height: 24px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <!-- المحتوى الأصلي -->
-        <div class="header-content">
-            <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="Website Logo" class="logo">
-            <div class="breadcrumb">
-                <a href="#">Home</a> / <a href="#">Check sticker</a>
-            </div>
-        </div>
-
-        <h2>Warranty sticker validation</h2>
-        
-        <p class="main-description">
-            Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.<br>
-            تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف
-        </p>
-
-        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="Website Banner" class="banner">
-
-        <p class="input-instruction">
-            Enter the number shown on the sticker in this box<br>
-            أدخل الرقم الموجود على الملصق هنا   
-        </p>
-
-        <div class="input-container">
-            <input type="text" id="numberInput" placeholder="XXXXXX">
-            <button type="submit" onclick="validateForm(event)">Check</button>
-        </div>
-
-        <div id="result"></div>
-    </div>
-
-    <!-- الأقسام الأخرى -->
-    <div class="links">
-        <!-- المحتوى الأصلي -->
-    </div>
-
-    <!-- الشريط السفلي المضاف -->
-    <div class="bottom-nav">
-        <button class="nav-icon">
-            <svg viewBox="0 0 24 24">
-                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-            </svg>
-        </button>
-        <a href="#" class="nav-icon">
-            <svg viewBox="0 0 24 24">
-                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
-            </svg>
-        </a>
-    </div>
-
-    <div class="footer">
-        <p>© Arab Computers 2022. All rights reserved.</p>
-    </div>
-
-    <script>
-        function validateForm(event) {
-            event.preventDefault();
-            const button = event.target;
-            const allowedCodes = ["2KKDX1RNX0", "3ANMH9TBMT", "3QFD18EA78"];
-            
-            const numberInput = document.getElementById("numberInput").value;
-            const resultElement = document.getElementById("result");
-            
-            button.classList.add('pressed');
-
-            resultElement.className = '';
-            resultElement.textContent = '';
-
-            const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
-
-            setTimeout(() => {
-                if (usedCodes.includes(numberInput)) {
-                    resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
-                    resultElement.className = 'error';
-                } else if (allowedCodes.includes(numberInput)) {
-                    usedCodes.push(numberInput);
-                    localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
-                    resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
-                    resultElement.className = 'success';
-                } else {
-                    resultElement.textContent = " Code not found ❌ هذا الرمز غير موجود !";
-                    resultElement.className = 'error';
-                }
-                
-                button.classList.remove('pressed');
-            }, 500);
-        }
-    </script>
-</body>
-</html>
+/* زيادة الهامش السفلي للفوتر فقط */
+.footer {
+    margin-bottom: 70px !important; 
+}
+</style>
