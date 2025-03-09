@@ -203,7 +203,14 @@
         .dpp-section {
             margin-left: 20px;
             position: relative;
-            display: inline-block;
+            display: block; /* لجعل كل عنصر في سطر جديد */
+        }
+
+        .dpp-section p {
+            margin: 5px 0; /* مسافة بين العناصر */
+            font-size: 1.2rem; /* نفس حجم خط DPP */
+            font-weight: bold; /* نفس سماكة الخط */
+            color: black; /* نفس لون النص */
         }
 
         .dpp-section .extra-content {
@@ -221,10 +228,6 @@
 
         .dpp-section:hover .extra-content {
             display: block;
-        }
-
-        .extra-content p {
-            margin: 5px 0;
         }
 
         @media (max-width: 768px) {
