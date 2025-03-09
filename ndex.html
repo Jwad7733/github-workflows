@@ -31,13 +31,13 @@
 
         /* ... باقي الأنماط الأصلية ... */
 
-        /* أنماط جديدة مضافة للشريط السفلي */
+        /* أنماط جديدة للشريط السفلي */
         .bottom-nav {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            background: #fff;
+            background: white;
             display: flex;
             justify-content: space-between;
             padding: 15px 20px;
@@ -71,17 +71,43 @@
     </style>
 </head>
 <body>
-    <!-- المحتوى الأصلي -->
     <div class="container">
-        <!-- ... المحتوى الأصلي بدون تغيير ... -->
+        <!-- المحتوى الأصلي -->
+        <div class="header-content">
+            <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="Website Logo" class="logo">
+            <div class="breadcrumb">
+                <a href="#">Home</a> / <a href="#">Check sticker</a>
+            </div>
+        </div>
+
+        <h2>Warranty sticker validation</h2>
+        
+        <p class="main-description">
+            Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.<br>
+            تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف
+        </p>
+
+        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="Website Banner" class="banner">
+
+        <p class="input-instruction">
+            Enter the number shown on the sticker in this box<br>
+            أدخل الرقم الموجود على الملصق هنا   
+        </p>
+
+        <div class="input-container">
+            <input type="text" id="numberInput" placeholder="XXXXXX">
+            <button type="submit" onclick="validateForm(event)">Check</button>
+        </div>
+
+        <div id="result"></div>
     </div>
 
     <!-- الأقسام الأخرى -->
     <div class="links">
-        <!-- ... المحتوى الأصلي بدون تغيير ... -->
+        <!-- المحتوى الأصلي -->
     </div>
 
-    <!-- شريط التنقل السفلي المضاف -->
+    <!-- الشريط السفلي المضاف -->
     <div class="bottom-nav">
         <button class="nav-icon">
             <svg viewBox="0 0 24 24">
@@ -99,10 +125,38 @@
         <p>© Arab Computers 2022. All rights reserved.</p>
     </div>
 
-    <!-- السكريبت الأصلي -->
     <script>
         function validateForm(event) {
-            // الكود الأصلي بدون تغيير
+            event.preventDefault();
+            const button = event.target;
+            const allowedCodes = ["2KKDX1RNX0", "3ANMH9TBMT", "3QFD18EA78"];
+            
+            const numberInput = document.getElementById("numberInput").value;
+            const resultElement = document.getElementById("result");
+            
+            button.classList.add('pressed');
+
+            resultElement.className = '';
+            resultElement.textContent = '';
+
+            const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
+
+            setTimeout(() => {
+                if (usedCodes.includes(numberInput)) {
+                    resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
+                    resultElement.className = 'error';
+                } else if (allowedCodes.includes(numberInput)) {
+                    usedCodes.push(numberInput);
+                    localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
+                    resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
+                    resultElement.className = 'success';
+                } else {
+                    resultElement.textContent = " Code not found ❌ هذا الرمز غير موجود !";
+                    resultElement.className = 'error';
+                }
+                
+                button.classList.remove('pressed');
+            }, 500);
         }
     </script>
 </body>
