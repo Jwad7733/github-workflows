@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warranty sticker validation</title>
+    <title>Warranty Sticker Validation</title>
     <style>
         :root {
             font-size: 16px;
@@ -70,6 +70,20 @@
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto 30px auto;
+        }
+
+        .warning-message {
+            color: red;
+            margin: 25px 0;
+            padding: 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .warning-url {
+            text-decoration: underline;
+            font-weight: bold;
+            color: darkred;
         }
 
         .banner {
@@ -202,29 +216,14 @@
 
         .dpp-section {
             margin-left: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .dpp-section .extra-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .dpp-section:hover .extra-content {
             display: block;
         }
 
-        .extra-content p {
+        .dpp-section p {
             margin: 5px 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: black;
         }
 
         @media (max-width: 768px) {
@@ -271,7 +270,21 @@
             </div>
         </div>
 
-        <h2>Warranty sticker validation</h2>
+        <h2>Warranty Sticker Validation</h2>
+
+        <div class="warning-message">
+            <p>
+                نحذر عملائنا الكرام من وجود ملصق ضمان مزور يحتوي على رمز إستجابة سريع يوجه المستخدمين لصفحة إلكترونية مزورة تشبه هذه الصفحة.<br>
+                تأكد دائماً من عنوان الصفحة الصحيح:<br>
+                <span class="warning-url">https://jwad7733.github.io/www.arabcomputers-check-stickers.com-/</span>
+            </p>
+            <p>
+                Important Notice to Our Valued Customers:<br>
+                We would like to alert you to the presence of counterfeit warranty stickers featuring a QR code that directs users to a fraudulent website designed to imitate the official Arab Computers website.<br>
+                Always verify the correct page address:<br>
+                
+            </p>
+        </div>
         
         <p class="main-description">
             Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.<br>
@@ -308,7 +321,7 @@
 
     <div class="links">
         <div class="left-section">
-            <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="بانر الموقع" class="banner">
+            <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="Website Banner" class="banner">
         </div>
         
         <div class="right-section">
@@ -316,34 +329,23 @@
                 Useful Links
                 <div class="dpp-section">
                     <p class="center-text">DPP</p>
-                    <div class="extra-content">
-                        <p class="center-text">iPod</p>
-                        <p class="center-text">Apple TV</p>
-                        <p class="center-text">Apple Watch TV</p>
-                    </div>
+                    <p class="center-text">iPod</p>
+                    <p class="center-text">Apple TV</p>
+                    <p class="center-text">Apple Watch TV</p>
                 </div>
             </h2>
             <p><a href="#">Home</a></p>
             <p><a href="#">Point Of Sales</a></p>
             <p><a href="#">Contact Us</a></p>
-        </div>
-
-        <div class="right-section">
-            <h2>Products</h2>
+            <p><a href="#">Products</a></p>
             <p><a href="#">iPhone</a></p>
             <p><a href="#">Mac</a></p>
             <p><a href="#">iPad</a></p>
-        </div>
-        
-        <div class="right-section">
-            <h2>Information</h2>
-            <p><a href="##">Learn How</a></p>
-            <p><a href="##">Service Providers</a></p>
-            <p><a href="##">Contact Us</a></p>
-        </div>
-
-        <div class="right-section">
-            <h2>Support and Sales</h2>
+            <p><a href="#">Information</a></p>
+            <p><a href="#">Learn How</a></p>
+            <p><a href="#">Service Providers</a></p>
+            <p><a href="#">Contact Us</a></p>
+            <p><a href="#">Support and Sales</a></p>
             <p><a href="#">For Maintenance: Visit AC-Care</a></p>
             <p><a href="#">For Individual Sales: Point of Sales</a></p>
             <p><a href="mailto:sales@arabcomputers.com.sa">For Corporate or Channels Sales: sales@arabcomputers.com.sa</a></p>
@@ -372,7 +374,7 @@
 
             setTimeout(() => {
                 if (usedCodes.includes(numberInput)) {
-                    resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
+                    resultElement.textContent = "Code is already used❌ تم استخدام هذا الرمز !";
                     resultElement.className = 'error';
                 } else if (allowedCodes.includes(numberInput)) {
                     usedCodes.push(numberInput);
@@ -380,7 +382,7 @@
                     resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
                     resultElement.className = 'success';
                 } else {
-                    resultElement.textContent = " Code not found ❌ هذا الرمز غير موجود !";
+                    resultElement.textContent = "Code not found ❌ هذا الرمز غير موجود !";
                     resultElement.className = 'error';
                 }
                 
