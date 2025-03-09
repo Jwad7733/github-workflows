@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warranty Sticker Validation</title>
+    <title>Warranty sticker validation</title>
     <style>
         :root {
             font-size: 16px;
@@ -70,20 +70,6 @@
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto 30px auto;
-        }
-
-        .warning-message {
-            color: red;
-            margin: 25px 0;
-            padding: 0;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .warning-url {
-            text-decoration: underline;
-            font-weight: bold;
-            color: darkred;
         }
 
         .banner {
@@ -169,27 +155,13 @@
             color: white;
             border-radius: 10px;
             text-align: left;
-            margin-bottom: 70px !important;
         }
 
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
+        .links {
             display: flex;
             justify-content: space-between;
-            padding: 15px 25px;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-
-        .nav-icon {
-            background: none;
-            border: none;
-            padding: 8px;
-            cursor: pointer;
+            margin-top: 20px;
+            text-align: left;
         }
 
         .right-section {
@@ -208,22 +180,17 @@
             font-size: 0.9rem;
         }
 
+        /* توسيط النصوص المحددة وجعلها عريضة وسوداء */
         .center-text {
             text-align: center !important;
-            font-weight: bold !important;
-            color: black !important;
+            font-weight: bold !important; /* جعل النص عريضًا */
+            color: black !important; /* تغيير لون النص إلى أسود */
         }
 
+        /* قسم DPP أسفل Useful Links */
         .dpp-section {
-            margin-left: 20px;
-            display: block;
-        }
-
-        .dpp-section p {
-            margin: 5px 0;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: black;
+            text-align: center;
+            margin-top: 20px;
         }
 
         @media (max-width: 768px) {
@@ -253,11 +220,6 @@
             .input-container button {
                 padding: 10px 15px;
             }
-            
-            .nav-icon svg {
-                width: 24px;
-                height: 24px;
-            }
         }
     </style>
 </head>
@@ -270,22 +232,7 @@
             </div>
         </div>
 
-        <h2>Warranty Sticker Validation</h2>
-
-        <div class="warning-message">
-            <p>
-                <img src="https://i.postimg.cc/66D66Vst/Warning-tag-A.png" alt="Website Banner" class="banner">
-                نحذر عملائنا الكرام من وجود ملصق ضمان مزور يحتوي على رمز إستجابة سريع يوجه المستخدمين لصفحة إلكترونية مزورة تشبه هذه الصفحة.<br>
-                تأكد دائماً من عنوان الصفحة الصحيح:<br>
-                <span class="warning-url">jwad7733.github.io/www.arabcomputers-check-stickers.com-/</span>
-            </p>
-            <p>
-                Important Notice to Our Valued Customers:<br>
-                We would like to alert you to the presence of counterfeit warranty stickers featuring a QR code that directs users to a fraudulent website designed to imitate the official Arab Computers website.<br>
-                Always verify the correct page address:<br>
-                
-            </p>
-        </div>
+        <h2>Warranty sticker validation</h2>
         
         <p class="main-description">
             Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.<br>
@@ -306,47 +253,49 @@
 
         <div id="result"></div>
     </div>
-
-    <div class="bottom-nav">
-        <button class="nav-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-            </svg>
-        </button>
-        <a href="#" class="nav-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
-            </svg>
-        </a>
-    </div>
-
+<div id="result"></div>
+    
     <div class="links">
-        <div class="left-section">
-            <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="Website Banner" class="banner">
-        </div>
-        
+            <div class="left-section">
+                <div>
+            <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="بانر الموقع" class="banner">
+        <div class="links">
+            
         <div class="right-section">
-            <h2>
-                Useful Links
-                <div class="dpp-section">
-                    <p class="center-text">DPP</p>
-                    <p class="center-text">iPod</p>
-                    <p class="center-text">Apple TV</p>
-                    <p class="center-text">Apple Watch TV</p>
-                </div>
-            </h2>
+            <h2>Useful Links</h2>
             <p><a href="#">Home</a></p>
             <p><a href="#">Point Of Sales</a></p>
             <p><a href="#">Contact Us</a></p>
-            <p><a href="#">Products</a></p>
+        </div>
+            <div class="dpp-section">
+            <p class="center-text">DPP</p> <!-- توسيط DPP أسفل Useful Links -->
+        </div>  
+        <div class="right-section">
+            <div class="dpp-section">
+            <p class="center-text">iPod</p> <!-- توسيط iPod أسفل Useful Links -->
+            <p class="center-text">Apple TV</p> <!-- توسيط Apple TV أسفل Useful Links -->
+            <p class="center-text">Apple Watch TV </p> <!-- توسيط Apple Watch TV  أسفل Useful Links -->
+        </div>
+            <h2>Products</h2>
             <p><a href="#">iPhone</a></p>
             <p><a href="#">Mac</a></p>
             <p><a href="#">iPad</a></p>
-            <p><a href="#">Information</a></p>
-            <p><a href="#">Learn How</a></p>
-            <p><a href="#">Service Providers</a></p>
-            <p><a href="#">Contact Us</a></p>
-            <p><a href="#">Support and Sales</a></p>
+        </div>
+        
+        <div class="right-section">
+            
+        <div class="dpp-section">
+            <p class="center-text">Terms and Conditions</p> <!-- توسيط Terms and Conditions أسفل Useful Links -->
+        </div> 
+            <h2>Information</h2>
+            <p><a href="##">Learn How</a></p>
+            <p><a href="##">Service Providers</a></p>
+            <p><a href="##">Contact Us</a></p>
+        </div>
+       
+
+        <div class="right-section">
+            <h2>Support and Sales</h2>
             <p><a href="#">For Maintenance: Visit AC-Care</a></p>
             <p><a href="#">For Individual Sales: Point of Sales</a></p>
             <p><a href="mailto:sales@arabcomputers.com.sa">For Corporate or Channels Sales: sales@arabcomputers.com.sa</a></p>
@@ -356,7 +305,8 @@
     <div class="footer">
         <p>© Arab Computers 2022. All rights reserved.</p>
     </div>
-  <script>
+
+    <script>
         function validateForm(event) {
             event.preventDefault();
             const button = event.target;
@@ -10361,7 +10311,6 @@
 "8TDLW12RNJ", 
 "3QFD18EA78" ];
             
-
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
             
@@ -10374,7 +10323,7 @@
 
             setTimeout(() => {
                 if (usedCodes.includes(numberInput)) {
-                    resultElement.textContent = "Code is already used❌ تم استخدام هذا الرمز !";
+                    resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
                     resultElement.className = 'error';
                 } else if (allowedCodes.includes(numberInput)) {
                     usedCodes.push(numberInput);
@@ -10382,7 +10331,7 @@
                     resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
                     resultElement.className = 'success';
                 } else {
-                    resultElement.textContent = "Code not found ❌ هذا الرمز غير موجود !";
+                    resultElement.textContent = " Code not found ❌ هذا الرمز غير موجود !";
                     resultElement.className = 'error';
                 }
                 
