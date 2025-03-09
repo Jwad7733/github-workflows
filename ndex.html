@@ -12,10 +12,32 @@
 
         .dpp-section {
             margin-left: 20px; /* مسافة بين "روابط مفيدة" و DPP */
+            position: relative; /* لجعل العناصر الإضافية تظهر أسفل DPP */
         }
 
         .dpp-section .center-text {
             margin: 0; /* إزالة الهوامش الافتراضية */
+        }
+
+        .dpp-section .extra-content {
+            display: none; /* إخفاء العناصر الإضافية بالافتراضي */
+            position: absolute;
+            top: 100%; /* وضع العناصر أسفل DPP */
+            left: 0;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .dpp-section:hover .extra-content {
+            display: block; /* إظهار العناصر عند التحويم */
+        }
+
+        .extra-content p {
+            margin: 5px 0;
         }
     </style>
 </head>
@@ -27,6 +49,12 @@
             Useful Links
             <div class="dpp-section">
                 <p class="center-text">DPP</p>
+                <!-- العناصر الإضافية -->
+                <div class="extra-content">
+                    <p class="center-text">iPod</p>
+                    <p class="center-text">Apple TV</p>
+                    <p class="center-text">Apple Watch TV</p>
+                </div>
             </div>
         </h2>
         <p><a href="#">Home</a></p>
