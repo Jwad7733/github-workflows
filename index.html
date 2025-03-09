@@ -156,7 +156,42 @@
             border-radius: 10px;
             text-align: left;
         }
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    z-index: 1000;
+}
 
+.nav-icon {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.nav-icon svg {
+    width: 28px;
+    height: 28px;
+    color: #2c3e50;
+}
+
+.footer {
+    margin-bottom: 70px !important;
+}
+
+@media (max-width: 480px) {
+    .nav-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+}
         <div class="bottom-nav">
     <button class="nav-icon">
         <svg viewBox="0 0 24 24"><!-- أيقونة القائمة --></svg>
@@ -230,8 +265,8 @@
             }
         }
     </style>
-</head>
-<body>
+    </head>
+    <body>
     <div class="container">
         <div class="header-content">
             <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="Website Logo" class="logo">
@@ -313,42 +348,7 @@
     <div class="footer">
         <p>© Arab Computers 2022. All rights reserved.</p>
     </div>
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #fff;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 20px;
-    border-top: 1px solid #eee;
-    z-index: 1000;
-}
-
-.nav-icon {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-
-.nav-icon svg {
-    width: 28px;
-    height: 28px;
-    color: #2c3e50;
-}
-
-.footer {
-    margin-bottom: 70px !important;
-}
-
-@media (max-width: 480px) {
-    .nav-icon svg {
-        width: 24px;
-        height: 24px;
-    }
-}
+                    
     <script>
         function validateForm(event) {
             event.preventDefault();
@@ -386,4 +386,4 @@
         }
     </script>
 </body>
-                </html>
+ </html>
