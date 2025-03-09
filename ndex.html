@@ -3,30 +3,19 @@
 <head>
     <!-- ... باقي العناصر الأصلية ... -->
     <style>
-        /* أنماط جديدة لإظهار العناصر تحت "روابط مفيدة" */
+        /* أنماط جديدة لتوسيط DPP في نفس السطر */
+        .right-section h2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
         .dpp-section {
-            position: relative;
+            margin-left: 20px; /* مسافة بين "روابط مفيدة" و DPP */
         }
 
-        .dpp-section .extra-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .dpp-section:hover .extra-content {
-            display: block;
-        }
-
-        .extra-content p {
-            margin: 5px 0;
+        .dpp-section .center-text {
+            margin: 0; /* إزالة الهوامش الافتراضية */
         }
     </style>
 </head>
@@ -34,19 +23,15 @@
     <!-- ... باقي المحتوى الأصلي ... -->
 
     <div class="right-section">
-        <h2>Useful Links</h2>
+        <h2>
+            Useful Links
+            <div class="dpp-section">
+                <p class="center-text">DPP</p>
+            </div>
+        </h2>
         <p><a href="#">Home</a></p>
         <p><a href="#">Point Of Sales</a></p>
         <p><a href="#">Contact Us</a></p>
-        <div class="dpp-section">
-            <p class="center-text">DPP</p>
-            <!-- المحتوى الإضافي -->
-            <div class="extra-content">
-                <p class="center-text">iPod</p>
-                <p class="center-text">Apple TV</p>
-                <p class="center-text">Apple Watch TV</p>
-            </div>
-        </div>  
     </div>
 
     <!-- ... باقي المحتوى الأصلي ... -->
