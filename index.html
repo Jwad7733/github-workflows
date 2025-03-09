@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warranty sticker validation</title>
+    <title>Warranty Sticker Validation</title>
     <style>
         :root {
             font-size: 16px;
@@ -202,7 +202,6 @@
 
         .dpp-section {
             margin-left: 20px;
-            position: relative;
             display: block; /* لجعل كل عنصر في سطر جديد */
         }
 
@@ -211,23 +210,6 @@
             font-size: 1.2rem; /* نفس حجم خط DPP */
             font-weight: bold; /* نفس سماكة الخط */
             color: black; /* نفس لون النص */
-        }
-
-        .dpp-section .extra-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .dpp-section:hover .extra-content {
-            display: block;
         }
 
         @media (max-width: 768px) {
@@ -274,7 +256,7 @@
             </div>
         </div>
 
-        <h2>Warranty sticker validation</h2>
+        <h2>Warranty Sticker Validation</h2>
         
         <p class="main-description">
             Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.<br>
@@ -311,7 +293,7 @@
 
     <div class="links">
         <div class="left-section">
-            <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="بانر الموقع" class="banner">
+            <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="Website Banner" class="banner">
         </div>
         
         <div class="right-section">
@@ -319,11 +301,9 @@
                 Useful Links
                 <div class="dpp-section">
                     <p class="center-text">DPP</p>
-                    <div class="extra-content">
-                        <p class="center-text">iPod</p>
-                        <p class="center-text">Apple TV</p>
-                        <p class="center-text">Apple Watch TV</p>
-                    </div>
+                    <p class="center-text">iPod</p>
+                    <p class="center-text">Apple TV</p>
+                    <p class="center-text">Apple Watch TV</p>
                 </div>
             </h2>
             <p><a href="#">Home</a></p>
@@ -340,9 +320,9 @@
         
         <div class="right-section">
             <h2>Information</h2>
-            <p><a href="##">Learn How</a></p>
-            <p><a href="##">Service Providers</a></p>
-            <p><a href="##">Contact Us</a></p>
+            <p><a href="#">Learn How</a></p>
+            <p><a href="#">Service Providers</a></p>
+            <p><a href="#">Contact Us</a></p>
         </div>
 
         <div class="right-section">
@@ -375,7 +355,7 @@
 
             setTimeout(() => {
                 if (usedCodes.includes(numberInput)) {
-                    resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
+                    resultElement.textContent = "Code is already used❌ تم استخدام هذا الرمز !";
                     resultElement.className = 'error';
                 } else if (allowedCodes.includes(numberInput)) {
                     usedCodes.push(numberInput);
@@ -383,7 +363,7 @@
                     resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
                     resultElement.className = 'success';
                 } else {
-                    resultElement.textContent = " Code not found ❌ هذا الرمز غير موجود !";
+                    resultElement.textContent = "Code not found ❌ هذا الرمز غير موجود !";
                     resultElement.className = 'error';
                 }
                 
