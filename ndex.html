@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warranty sticker validation</title>
     <style>
-        /* جميع الأنماط الأصلية بدون تغيير */
         :root {
             font-size: 16px;
         }
@@ -29,10 +28,136 @@
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* ... باقي الأنماط الأصلية ... */
+        .header-content {
+            text-align: left;
+            margin-bottom: 30px;
+        }
 
-        /* أنماط جديدة للشريط السفلي */
-        .bottom-nav {
+        .logo {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: #777;
+            margin: 10px 0 15px 0;
+        }
+
+        .breadcrumb a {
+            color: #000 !important;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: #333 !important;
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 20px 0;
+            letter-spacing: 1px;
+        }
+
+        .main-description {
+            text-align: center;
+            font-weight: normal;
+            font-size: 1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+
+        .banner {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .input-instruction {
+            text-align: center;
+            font-weight: normal;
+            font-size: 0.9rem;
+            margin: 15px 0;
+        }
+
+        .input-container {
+            width: 45%;
+            max-width: 300px;
+            display: flex;
+            align-items: center;
+            border: 2px solid #cccccc;
+            border-radius: 25px 0 0 25px;
+            overflow: hidden;
+            margin: 10px auto;
+            height: 40px;
+        }
+
+        .input-container input {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            font-size: 0.9rem;
+            outline: none;
+            border-radius: 25px 0 0 25px;
+            text-align: left;
+            height: 100%;
+        }
+
+        .input-container button {
+            padding: 0 20px;
+            background-color: #a8822b;
+            color: white;
+            border: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            height: 100%;
+            border-radius: 0;
+            min-width: 80px;
+        }
+
+        .input-container button.pressed {
+            background-color: white !important;
+            color: #a8822b !important;
+        }
+
+        #result {
+            margin: 20px auto;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            max-width: 350px;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .footer {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 10px;
+            text-align: left;
+            margin-bottom: 70px !important;
+        }
+    .bottom-nav {
             position: fixed;
             bottom: 0;
             left: 0;
@@ -40,7 +165,7 @@
             background: white;
             display: flex;
             justify-content: space-between;
-            padding: 15px 20px;
+            padding: 15px 25px;
             box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
         }
@@ -51,18 +176,61 @@
             padding: 8px;
             cursor: pointer;
         }
-
-        .nav-icon svg {
-            width: 28px;
-            height: 28px;
-            color: #2c3e50;
+        .right-section {
+            flex: 1;
+            margin-left: 20px;
+            text-align: left;
         }
 
-        .footer {
-            margin-bottom: 80px !important;
+        .right-section h2 {
+            text-align: left;
+            font-size: 1.2rem;
+        }
+
+        .right-section p {
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .center-text {
+            text-align: center !important;
+            font-weight: bold !important;
+            color: black !important;
+        }
+
+        .dpp-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .input-container {
+                width: 70%;
+            }
+            
+            .input-container button {
+                padding: 12px 20px;
+            }
+
+            .links {
+                flex-direction: column;
+            }
+
+            .right-section {
+                margin-left: 0;
+                margin-top: 20px;
+            }
         }
 
         @media (max-width: 480px) {
+            .input-container {
+                width: 90%;
+            }
+            
+            .input-container button {
+                padding: 10px 15px;
+            }
+            
             .nav-icon svg {
                 width: 24px;
                 height: 24px;
@@ -72,7 +240,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- المحتوى الأصلي -->
         <div class="header-content">
             <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="Website Logo" class="logo">
             <div class="breadcrumb">
@@ -101,63 +268,58 @@
 
         <div id="result"></div>
     </div>
-
-    <!-- الأقسام الأخرى -->
-    <div class="links">
-        <!-- المحتوى الأصلي -->
-    </div>
-
-    <!-- الشريط السفلي المضاف -->
-    <div class="bottom-nav">
+<div class="bottom-nav">
         <button class="nav-icon">
-            <svg viewBox="0 0 24 24">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
             </svg>
         </button>
         <a href="#" class="nav-icon">
-            <svg viewBox="0 0 24 24">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
             </svg>
         </a>
     </div>
 
-    <div class="footer">
-        <p>© Arab Computers 2022. All rights reserved.</p>
-    </div>
+    <div class="links">
+        <div class="left-section">
+            <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="بانر الموقع" class="banner">
+        </div>
+        
+        <div class="right-section">
+            <h2>Useful Links</h2>
+            <p><a href="#">Home</a></p>
+            <p><a href="#">Point Of Sales</a></p>
+            <p><a href="#">Contact Us</a></p>
+            <div class="dpp-section">
+                <p class="center-text">DPP</p>
+            </div>  
+        </div>
 
-    <script>
-        function validateForm(event) {
-            event.preventDefault();
-            const button = event.target;
-            const allowedCodes = ["2KKDX1RNX0", "3ANMH9TBMT", "3QFD18EA78"];
-            
-            const numberInput = document.getElementById("numberInput").value;
-            const resultElement = document.getElementById("result");
-            
-            button.classList.add('pressed');
+        <div class="right-section">
+            <div class="dpp-section">
+                <p class="center-text">iPod</p>
+                <p class="center-text">Apple TV</p>
+                <p class="center-text">Apple Watch TV</p>
+            </div>
+            <h2>Products</h2>
+            <p><a href="#">iPhone</a></p>
+            <p><a href="#">Mac</a></p>
+            <p><a href="#">iPad</a></p>
+        </div>
+        
+        <div class="right-section">
+            <div class="dpp-section">
+                <p class="center-text">Terms and Conditions</p>
+            </div> 
+            <h2>Information</h2>
+            <p><a href="##">Learn How</a></p>
+            <p><a href="##">Service Providers</a></p>
+            <p><a href="##">Contact Us</a></p>
+        </div>
 
-            resultElement.className = '';
-            resultElement.textContent = '';
-
-            const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
-
-            setTimeout(() => {
-                if (usedCodes.includes(numberInput)) {
-                    resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
-                    resultElement.className = 'error';
-                } else if (allowedCodes.includes(numberInput)) {
-                    usedCodes.push(numberInput);
-                    localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
-                    resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
-                    resultElement.className = 'success';
-                } else {
-                    resultElement.textContent = " Code not found ❌ هذا الرمز غير موجود !";
-                    resultElement.className = 'error';
-                }
-                
-                button.classList.remove('pressed');
-            }, 500);
-        }
-    </script>
-</body>
-</html>
+        <div class="right-section">
+            <h2>Support and Sales</h2>
+            <p><a href="#">For Maintenance: Visit AC-Care</a></p>
+            <p><a href="#">For Individual Sales: Point of Sales</a></p>
+            <p><a href="mailto:sales@arabcomputers.com.sa">For Corporate or Channels Sales: sales@arabcomputers.com.sa</a></p
