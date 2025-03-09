@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warranty sticker validation</title>
     <style>
+        /* جميع الأنماط السابقة تبقى كما هي */
         :root {
             font-size: 16px;
         }
@@ -150,53 +151,61 @@
             color: white;
             border-radius: 10px;
             text-align: left;
-            margin-bottom: 70px;
+            margin-bottom: 80px; /* زيادة الهامش لتجنب التداخل */
         }
 
-        /* أنماط الأزرار الجديدة */
+        /* الأنماط الجديدة للشريط السفلي */
         .bottom-nav {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            background: #2c3e50;
+            background: white;
             display: flex;
-            justify-content: space-between;
-            padding: 10px 20px;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15px 25px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
+            gap: 20px;
         }
 
-        .nav-button {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            background: #DEB887;
-            font-weight: bold;
-        }
-
-        .menu-button {
+        .nav-icon {
+            display: flex;
+            align-items: center;
             background: none;
             border: none;
-            color: white;
-            padding: 10px;
+            padding: 8px;
             cursor: pointer;
         }
 
-        .menu-button svg {
-            filter: brightness(0) invert(1);
+        .nav-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: #2c3e50;
+            transition: fill 0.3s ease;
+        }
+
+        .nav-icon:hover svg {
+            fill: #DEB887;
         }
 
         @media (max-width: 480px) {
-            .nav-button {
-                font-size: 0.9rem;
-                padding: 8px 15px;
+            .bottom-nav {
+                padding: 12px 15px;
+                gap: 15px;
+            }
+            
+            .nav-icon svg {
+                width: 24px;
+                height: 24px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- المحتوى الأصلي يبقى كما هو -->
         <div class="header-content">
             <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="شعار الموقع" class="logo">
             <div class="breadcrumb">
@@ -226,14 +235,18 @@
         <div id="result"></div>
     </div>
 
-    <!-- الأزرار الجديدة -->
+    <!-- الشريط السفلي الجديد -->
     <div class="bottom-nav">
-        <a href="#" class="nav-button">الرئيسية</a>
-        <button class="menu-button" onclick="toggleMenu()">
-            <svg viewBox="0 0 24 24" width="24" height="24">
-                <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        <button class="nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
             </svg>
         </button>
+        <a href="#" class="nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
+            </svg>
+        </a>
     </div>
 
     <div class="footer">
@@ -241,6 +254,7 @@
     </div>
 
     <script>
+        // السكريبت الأصلي يبقى كما هو
         function validateForm(event) {
             event.preventDefault();
             const button = event.target;
@@ -284,11 +298,6 @@
                 button.style.backgroundColor = "#DEB887";
                 button.style.color = "white";
             }, 500);
-        }
-
-        function toggleMenu() {
-            // يمكنك إضافة منطق القائمة هنا
-            alert('سيتم فتح القائمة هنا');
         }
     </script>
 </body>
